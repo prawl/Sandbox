@@ -38,7 +38,7 @@ group :development do
   gem 'capistrano-bundler', require: false
   gem 'capistrano-rails', require: false
   gem 'capistrano-rbenv', '>= 2.0', require: false
-  gem 'rake', require: false
+  gem 'rake','10.1.1', require: false
   gem 'warbler', require: false
   gem 'webrick', require: false
 end
