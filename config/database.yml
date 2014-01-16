@@ -7,7 +7,7 @@ development:
   adapter: postgresql
   prepared_statements: false
   encoding: unicode
-  database: cir_development
+  database: development
   username: 
   password: 
 
@@ -33,7 +33,7 @@ test:
   adapter: postgresql
   prepared_statements: false
   encoding: unicode
-  database: cir_test
+  database: test
   username: 
   password: 
 
@@ -41,7 +41,7 @@ production:
   adapter: postgresql
   prepared_statements: false
   encoding: unicode
-  database: cir_production
+  database: production
   username: 
   password: 
 

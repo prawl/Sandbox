@@ -1,37 +1,62 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.13'
+gem 'rails', '~> 3.2.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem  'activerecord-postgresql-adapter'
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+group :oracle do
+  gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0', require: false
 end
 
+group :pg do
+  gem 'foreigner'
+  platforms :ruby do
+    gem 'pg', require: false
+  end
+  platforms :jruby do
+    gem 'activerecord-jdbcpostgresql-adapter', require: false
+  end
+end
+
+gem 'airbrake'
+gem 'isbm_adaptor', '1.0.rc8.6'
+gem 'nokogiri'
+gem 'uuid'
+gem 'strong_parameters'
+
+# Asset Gems
+gem 'sass-rails'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'therubyrhino'
 gem 'jquery-rails'
+gem 'bootstrap-sass'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+  platforms :ruby do
+    gem 'thin'
+  end
+  gem 'capistrano', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-rbenv', '>= 2.0', require: false
+  gem 'rake', require: false
+  gem 'warbler', require: false
+  gem 'webrick', require: false
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :development, :test do
+  gem 'awesome_print'
+  gem 'quiet_assets'
+  gem 'rspec-rails'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+group :test do
+  gem 'capybara'
+  gem 'capybara-screenshot'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'fuubar'
+  gem 'poltergeist', require: false
+  gem 'selenium-webdriver', require: false
+  gem 'simplecov', require: false
+  gem 'simplecov-rcov', require: false
+end
