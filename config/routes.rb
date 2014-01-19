@@ -1,4 +1,6 @@
 Sandbox::Application.routes.draw do
+  resources :user
+
   root to: 'user#index'
 
   # The priority is based upon order of creation:

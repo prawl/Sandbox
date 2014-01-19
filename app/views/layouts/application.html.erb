@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <title>'work hard, play harder'</title>
@@ -5,5 +6,9 @@
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
-  <body> </body>
+  <body>
+    <div id='main'>
+      <%= yield %>
+    </div>
+  </body>
 </html>
