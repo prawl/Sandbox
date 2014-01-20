@@ -1,4 +1,4 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
 
    def self.index
     @users = User.all
@@ -9,11 +9,17 @@ class UserController < ApplicationController
   end
 
   def new
-    @user = User.new()
+    @user = User.new
   end
 
   def create
     @user = User.new(registry_params)
+    if @user.save
+      puts 'Success'
+      redirect_to user_path(@user)
+    else
+      render :new
+    end
   end
 
   private
