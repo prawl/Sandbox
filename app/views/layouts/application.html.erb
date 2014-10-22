@@ -1,23 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>'work hard, play harder'</title>
-    <h1> Cool info </h1>
-    <h2> Even cooler subheader </h2>
+    <title></title>
     <%= stylesheet_link_tag  'application', :media => 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <div class="col-md-12">
-      <div class="row">
-        <div class="col-sm-2">
-          <%= link_to 'Users', users_path, class: 'btn btn-primary' %>
-        </div>
-        <div class="col-sm-10">
-          <%= yield %>
-        </div>
-      </div>
-    </div>
+    <%= yield %>
   </body>
 </html>

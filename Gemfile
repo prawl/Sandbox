@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.0'
+gem 'rails'
 
 group :oracle do
   gem 'activerecord-oracle_enhanced-adapter', '~> 1.4.0', require: false
@@ -16,6 +16,8 @@ group :pg do
   end
 end
 
+gem 'imdb'
+gem 'spreadsheet'
 gem 'airbrake'
 gem 'isbm_adaptor', '1.0.rc8.6'
 gem 'nokogiri'
@@ -29,6 +31,8 @@ gem 'coffee-rails'
 gem 'therubyrhino'
 gem 'jquery-rails'
 gem 'bootstrap-sass'
+gem 'elasticsearch-rails'
+gem 'elasticsearch-model'
 
 group :development do
   platforms :ruby do

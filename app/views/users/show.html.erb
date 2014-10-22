@@ -1,4 +1,6 @@
-<h1> SHOW PAGE </h1>
+<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+
+<h1> Show Page </h1>
 <h2> Email </h2>
 <%= @user.email %>
 <br/>
@@ -7,3 +9,5 @@
 <br/>
 <h2> Last Name </h2>
 <%= @user.lname %>
+<h2> Delete </h2>
+<%= link_to 'Delete', @user, method: :delete, class: 'btn btn-danger' %>
