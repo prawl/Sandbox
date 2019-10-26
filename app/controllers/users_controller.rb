@@ -15,10 +15,18 @@ class UsersController < ApplicationController
   def create
     @user = User.new(registry_params)
     if @user.save
-      puts 'Success'
       redirect_to user_path(@user)
     else
       render :new
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    if @user.destroy
+      redirect_to users_path
+    else
+      flash.now[:error] = "Error!"
     end
   end
 
